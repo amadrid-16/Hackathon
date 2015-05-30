@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
-public class userInterface{
+public class userInterface extends FlashcardSet{
    public static void main(String[] args){
       Scanner keyboard = new Scanner(System.in);
+      FlashcardSet set1 = new FlashcardSet();
+      
       System.out.println("Welcome to the Flashcard Maker");
       while (true){
       System.out.println("Menu");//menu
@@ -36,13 +38,14 @@ public class userInterface{
       
          if (rtn == 1){
             //creates set
-            FlashcardSet set1 = FlashCardMaker.setCreator();
+            set1 = FlashcardSet.setCreator();
             
             System.out.println("SET CREATED");
          }  
          else if (rtn == 2){
             //edits set
-            FlashcardSet.setEditMenu();
+            userInterface UI = new userInterface();
+            UI.setEditMenu();
             System.out.println("SET EDITED");
          }   
          else if (rtn == 3){
@@ -55,7 +58,7 @@ public class userInterface{
          }
          else if(rtn == 5){
             //print set
-            //set1.toString();
+            System.out.println(set1.toString());
          }
          else if (rtn == 6){
             //exit
@@ -66,5 +69,38 @@ public class userInterface{
             System.out.println("That's not one of the choices buddy");
          }
        }  
+   }
+
+
+
+   public void setEditMenu(){
+      Scanner keyboard = new Scanner(System.in);
+      int rtn;
+      while(true){
+         System.out.println("Set Edit Menu\n1. Edit Set Name\n2. Edit Card\n3. Add Card\n4. Remove Card\n5. Back to Main Menu");
+         rtn = keyboard.nextInt();
+         if(rtn == 1){
+            System.out.println("Set name edited");
+         }
+         else if(rtn == 2){
+            System.out.println("Card Edited");
+         }
+         else if(rtn == 3){
+            cardCreator();
+            System.out.println("Card added");
+         }
+         else if(rtn == 4){
+            System.out.println("Card Removed");
+         }
+         else if(rtn == 5){
+            System.out.println("Goodbye");
+            break;
+         }
+         else{
+            System.out.println("That's not a valid selection");
+         }
+         
+      }
+      
    }
 }

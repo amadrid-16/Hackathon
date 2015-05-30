@@ -1,10 +1,15 @@
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.ArrayList;
 
-public class FlashcardSet{
+public class FlashcardSet extends Flashcard{
+public static Scanner keyboard = new Scanner(System.in);
+   
+   public String word;
+   public String definition;
+   
    String setName;
    int numCards;
-   ArrayList<Flashcard> cards;
+   public static ArrayList<Flashcard> cards;
    public FlashcardSet(String setName){
       this.setName = setName;
       cards = new ArrayList<Flashcard>();      
@@ -12,44 +17,8 @@ public class FlashcardSet{
    public FlashcardSet(){
       this("Sample Set");
    }
-   public static void setEditMenu(){
-      Scanner keyboard = new Scanner(System.in);
-      int rtn;
-      while(true){
-         System.out.println("Set Edit Menu\n1. Edit Set Name\n2. Edit Card\n3. Add Card\n4. Remove Card\n5. Back to Main Menu");
-         rtn = keyboard.nextInt();
-         if(rtn == 1){
-            System.out.println("Set name edited");
-         }
-         else if(rtn == 2){
-            System.out.println("Card Edited");
-         }
-         else if(rtn == 3){
-            
-            System.out.println("Card added");
-         }
-         else if(rtn == 4){
-            System.out.println("Card Removed");
-         }
-         else if(rtn == 5){
-            System.out.println("Goodbye");
-            break;
-         }
-         else{
-            System.out.println("That's not a valid selection");
-         }
-         
-      }
-      
-   }
-   public void newCard(String word, String definition){
-      this.cards.add(new Flashcard(word, definition));
-      numCards++;
-   }
-   public void newCard(){
-      this.cards.add(new Flashcard());
-      numCards++;
-   }
+
+
    public String toString(){
       String rtn = this.setName;
       rtn += "\nNumber of Cards: " + numCards;
@@ -58,4 +27,39 @@ public class FlashcardSet{
       } 
       return rtn;
    }
+
+   
+   public static FlashcardSet setCreator(){
+      String setName;
+      
+      System.out.println("What would you like to name your set?");
+      setName = keyboard.nextLine();
+      FlashcardSet set1 = new FlashcardSet(setName);
+      System.out.println(set1.toString());
+      return set1;
+   }
+     
+   public void cardCreator(){
+      System.out.println("What would you like the word to be?");
+      word = keyboard.next();
+      System.out.println("And the definition?");
+      definition = keyboard.next();
+      newCard(word, definition);
+      System.out.println(cards.get(numCards-1));
+      System.out.println("Set size: " + numCards);
+      
+   }
+   
+   public void newCard(String word, String definition){
+      this.word = word;
+      this.definition = definition;
+      cards.add(new Flashcard(word, definition));
+      numCards++;
+   }
+   
+   public void newCard(){
+      cards.add(new Flashcard());
+      numCards++;
+   }   
+       
 }
