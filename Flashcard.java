@@ -20,4 +20,12 @@ public class Flashcard{
       rtn = "\tWord: " + this.word + "\n\tDefinition: " + this.definition;
       return rtn;
    }
+   
+   public String getWord(){
+      return this.word;
+   }
+   
+   public String getDefinition(){
+      return this.definition;
+   }
 }

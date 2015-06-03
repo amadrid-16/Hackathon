@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class FlashcardSet extends Flashcard{
+public class FlashcardSet{
 public static Scanner keyboard = new Scanner(System.in);
    
    public String word;
@@ -9,7 +9,7 @@ public static Scanner keyboard = new Scanner(System.in);
    
    String setName;
    int numCards;
-   public static ArrayList<Flashcard> cards;
+   public ArrayList<Flashcard> cards;
    public FlashcardSet(String setName){
       this.setName = setName;
       cards = new ArrayList<Flashcard>();      
@@ -29,7 +29,7 @@ public static Scanner keyboard = new Scanner(System.in);
    }
 
    
-   public static FlashcardSet setCreator(){
+   public FlashcardSet setCreator(){
       String setName;
       
       System.out.println("What would you like to name your set?");
@@ -50,7 +50,6 @@ public static Scanner keyboard = new Scanner(System.in);
       
    }
    
-
    public void newCard(String word, String definition){
       this.word = word;
       this.definition = definition;
@@ -61,6 +60,6 @@ public static Scanner keyboard = new Scanner(System.in);
    public void newCard(){
       cards.add(new Flashcard());
       numCards++;
-   }   
-       
+   }
+
 }

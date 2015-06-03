@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class userInterface extends FlashcardSet{
+public class userInterface extends Definitions{
    public static void main(String[] args){
       Scanner keyboard = new Scanner(System.in);
       FlashcardSet set1 = new FlashcardSet();
@@ -49,7 +49,8 @@ public class userInterface extends FlashcardSet{
             System.out.println("SET EDITED");
          }   
          else if (rtn == 3){
-            //ends run
+            Definitions d = new Definitions();
+            d.definitions(set1);
             System.out.println("PLAY DEFINTIONS");
          }
          else if (rtn == 4){
@@ -90,15 +91,6 @@ public class userInterface extends FlashcardSet{
             System.out.println("Card added");
          }
          else if(rtn == 4){
-            System.out.println("Which card do you want to remove?");
-            for (int x=0; x < numCards; x++){
-               int i = x+1;
-               System.out.println("Card: " + i);
-               System.out.println(cards.get(x));
-               System.out.println("");
-            }
-            int i = keyboard.nextInt();
-            cards.remove(i-1);   
             System.out.println("Card Removed");
          }
          else if(rtn == 5){
