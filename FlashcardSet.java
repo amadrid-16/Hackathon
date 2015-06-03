@@ -50,6 +50,7 @@ public static Scanner keyboard = new Scanner(System.in);
       
    }
    
+
    public void newCard(String word, String definition){
       this.word = word;
       this.definition = definition;

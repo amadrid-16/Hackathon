@@ -90,6 +90,15 @@ public class userInterface extends FlashcardSet{
             System.out.println("Card added");
          }
          else if(rtn == 4){
+            System.out.println("Which card do you want to remove?");
+            for (int x=0; x < numCards; x++){
+               int i = x+1;
+               System.out.println("Card: " + i);
+               System.out.println(cards.get(x));
+               System.out.println("");
+            }
+            int i = keyboard.nextInt();
+            cards.remove(i-1);   
             System.out.println("Card Removed");
          }
          else if(rtn == 5){
