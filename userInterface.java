@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class userInterface{
       
    public static void main(String[] args){
-   userInterface UI = new userInterface();
-   FlashcardSet FCS = new FlashcardSet();
+      userInterface UI = new userInterface();
+      FlashcardSet FCS = new FlashcardSet();
       Scanner keyboard = new Scanner(System.in);
       FlashcardSet set1 = new FlashcardSet();
       
