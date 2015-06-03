@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-public class Definitions extends FlashcardSet{
+public class Definitions{
      ArrayList<Flashcard> tempSet = new ArrayList();
      FlashcardSet set = new FlashcardSet();
      Scanner input = new Scanner(System.in);
@@ -43,7 +43,7 @@ public class Definitions extends FlashcardSet{
          String answer = input.next();
          if(answer.equals(set.cards.get(x).getWord())){
             System.out.println("Correct");
-            this.cards.remove(x);
+            set.cards.remove(x);
             counter ++;
          }
          else{
