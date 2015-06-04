@@ -17,7 +17,7 @@ public class Flashcard{
    }
    public String toString(){
       String rtn;
-      rtn = "\tWord: " + this.word + "\n\tDefinition: " + this.definition;
+      rtn = " \n \tWord: " + this.word + "\n\tDefinition: " + this.definition; 
       return rtn;
    }
    

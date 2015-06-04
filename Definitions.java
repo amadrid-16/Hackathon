@@ -20,16 +20,14 @@ public class Definitions{
          this.set = set;
          for(int x = 0; x < set.cards.size(); x++){
             tempSet.add(set.cards.get(x));
-            System.out.println("ya");
          }
+         
          System.out.println("Welcome to the Definitions Game!");
-         System.out.println("Would you like to study word first or definition first?? (Press 1 for word and 2 for definition)");
-         int choice = input.nextInt();
-         if(choice == 1){
-            wordFirst(set);
-            System.out.println("You got " + counter);
+         System.out.println("A word from your flashcardset will be printed. Enter the definition. Good Luck!");
+         wordFirst(set);
+         System.out.println("You got " + counter);
             
-         }
+         
          
      }
     
@@ -37,11 +35,10 @@ public class Definitions{
      
      public void wordFirst(FlashcardSet set){
        this.set = set;
-       System.out.println("test");
        for(int x = 0; x < set.cards.size(); x++){ 
          System.out.println(set.cards.get(x).getWord());
-         String answer = input.next();
-         if(answer.equals(set.cards.get(x).getWord())){
+         String answer = input.nextLine();
+         if(answer.equalsIgnoreCase(set.cards.get(x).getWord())){
             System.out.println("Correct");
             set.cards.remove(x);
             counter ++;
@@ -52,10 +49,6 @@ public class Definitions{
        }  
      }
      
-     public void definitionFirst(){
-     
-     
-     }
 }
 
      
