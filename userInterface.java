@@ -1,12 +1,13 @@
 import java.util.Scanner;
 
 public class userInterface{
-      
-   public static void main(String[] args){
-   userInterface UI = new userInterface();
+   //userInterface UI = new userInterface();
    FlashcardSet FCS = new FlashcardSet();
    FlashcardSet set1 = new FlashcardSet();
    Definitions def = new Definitions();
+
+      
+   public void mainMenu(){   
       Scanner keyboard = new Scanner(System.in);
       
       
@@ -68,7 +69,7 @@ public class userInterface{
          else if (rtn == 2){
             //edits set
             
-            UI.setEditMenu();
+            this.setEditMenu();
             System.out.println("SET EDITED");
          }   
          else if(rtn == 3){
@@ -89,9 +90,7 @@ public class userInterface{
 
 
    public void setEditMenu(){
-   userInterface UI = new userInterface();
-   FlashcardSet FCS = new FlashcardSet();
-   FlashcardSet set1 = new FlashcardSet();
+   
 
       Scanner keyboard = new Scanner(System.in);
       int rtn;
@@ -120,6 +119,4 @@ public class userInterface{
       }
       
    }
-      
-
-}
+   }
